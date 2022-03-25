@@ -807,7 +807,8 @@ contract BNBRagnarok is ERC20Detailed, Ownable {
             _totalFee = totalFee.add(sellFee);
             _treasuryFee = treasuryFee.add(sellFee);
         }
-        //comment one is fixed, but when i use that, it will be error for small amount tx etc. remove lp also not working. but and sell good
+        //comment one is fixed, but when i use that, it will be error for small amount tx etc. remove lp also not working. buy and sell good
+        //and got error Fail with error 'SafeMath: subtraction overflow'
         // uint256 feeAmount = gonAmount.mul(_totalFee).div(feeDenominator);
         uint256 feeAmount = gonAmount.div(feeDenominator).mul(_totalFee);
        
