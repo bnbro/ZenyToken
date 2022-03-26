@@ -690,14 +690,16 @@ contract BNBRagnarok is ERC20Detailed, Ownable {
         uint256 times = deltaTime.div(15 minutes);
         uint256 epoch = times.mul(15);
 
+        //2.304% Daily
+        //0.024% Every 15 Mins
         if (deltaTimeFromInit < (120 days)) {
-            rebaseRate = 2355;
+            rebaseRate = 2400;
         } else if (deltaTimeFromInit <= (240 days)) {
-            rebaseRate = 1177;
+            rebaseRate = 240;
         } else if (deltaTimeFromInit <= (365 days)) {
-            rebaseRate = 588;
+            rebaseRate = 24;
         } else if (deltaTimeFromInit > (365 days)) {
-            rebaseRate = 294;
+            rebaseRate = 2;
         }
 
         for (uint256 i = 0; i < times; i++) {
