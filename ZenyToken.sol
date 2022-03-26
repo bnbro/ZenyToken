@@ -586,12 +586,13 @@ contract BNBRagnarok is ERC20Detailed, Ownable {
     uint256 private constant INITIAL_FRAGMENTS_SUPPLY =
         325 * 10**3 * 10**DECIMALS;
 
+    //BUY 14% : SELL 16% : SLIPPAGE 18-20%
     uint256 public constant liquidityFee = 10;
-    uint256 public constant treasuryFee = 25;
-    uint256 public constant gamePoolFee = 70;
-    uint256 public constant dividendFee = 30;
+    uint256 public constant treasuryFee = 15;
+    uint256 public constant gamePoolFee = 80;
+    uint256 public constant dividendFee = 20;
     uint256 public constant sellFee = 20;
-    uint256 public constant autofirePitFee = 25;
+    uint256 public constant autofirePitFee = 15;
     uint256 public totalFee =
         liquidityFee.add(treasuryFee).add(gamePoolFee).add(dividendFee).add(
             autofirePitFee
@@ -639,7 +640,7 @@ contract BNBRagnarok is ERC20Detailed, Ownable {
     mapping(address => bool) public blacklist;
     mapping(address => bool) public isDividendExempt;
 
-    constructor() ERC20Detailed("BNBRagnarokV2", "ZENYV2", uint8(DECIMALS)) Ownable() {
+    constructor() ERC20Detailed("BNBRagnarok", "ZENY", uint8(DECIMALS)) Ownable() {
 
         //testnet
         router = IPancakeSwapRouter(0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3); 
